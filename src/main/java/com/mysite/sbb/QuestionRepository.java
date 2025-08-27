@@ -2,5 +2,11 @@ package com.mysite.sbb;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface QuestionRepository extends JpaRepository<Question,Integer> {
+
+    Optional<Question> findBySubject(String subject); //있으지 없을지 몰라서 optional
+
+    Optional<Question> findBySubjectAndContent(String subject1, String subject2);
 }
