@@ -6,12 +6,17 @@
 </head>
 <body>
 
-<idv>
-    [[${value}]]
-</idv>
-<div th:text="${value}"></div>
-<ul>
-    <li th:each="num : ${list}" th:text="${num}"></li>  <!--반복문-->
-</ul>
-</body>
-</html>
+<table border="1">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="question : ${questionList}">
+        <td th:text="${question.subject}"></td>
+        <td th:text="${question.createDate}"></td>
+    </tr>
+    </tbody>
+</table>
